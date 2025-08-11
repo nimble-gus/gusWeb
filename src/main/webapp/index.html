@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Mi Sitio Personal - Gustavo Ortiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        
+        .main-title {
+            font-size: 3.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-message {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .nav-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-title {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .nav-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-card:hover::before {
+            left: 100%;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-card h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .nav-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        
+        .nav-card a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-card a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .features-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .features-title {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">👋 ¡Bienvenido a Mi Sitio Personal!</h1>
+            <p class="subtitle">Gustavo Ortiz - Estudiante de Ingeniería de Sistemas</p>
+            <p class="welcome-message">
+                Te doy la bienvenida a mi espacio digital donde comparto mi pasión por la tecnología, 
+                mi trayectoria académica y los temas que más me interesan. Este sitio está construido 
+                utilizando tecnologías web modernas y servlets de Jakarta EE, demostrando las habilidades 
+                que estoy desarrollando en mi carrera.
+            </p>
+        </div>
+        
+        <div class="nav-section">
+            <h2 class="nav-title">🚀 Explora Mi Sitio</h2>
+            <div class="nav-grid">
+                <div class="nav-card">
+                    <h3>👤 Mi Biografía</h3>
+                    <p>Conoce más sobre mí, mis intereses, pasatiempos y objetivos académicos. Incluye mi fotografía y una descripción detallada de mi perfil.</p>
+                    <a href="biografia">Ver Biografía</a>
+                </div>
+                
+                <div class="nav-card">
+                    <h3>💻 Temas de Interés</h3>
+                    <p>Descubre los temas tecnológicos que más me apasionan, desde inteligencia artificial hasta desarrollo web moderno.</p>
+                    <a href="temas-interes">Explorar Temas</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-section">
+            <h2 class="features-title">✨ Características del Sitio</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Diseño Moderno</h4>
+                    <p>Interfaz atractiva con gradientes y efectos visuales modernos</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h4>Responsive</h4>
+                    <p>Se adapta perfectamente a todos los dispositivos</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Jakarta EE</h4>
+                    <p>Desarrollado con servlets modernos de Jakarta EE</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔗</div>
+                    <h4>Navegación Intuitiva</h4>
+                    <p>Enlaces de navegación entre todas las páginas</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Gustavo Ortiz - Sitio Personal con Servlets</p>
+            <p>Desarrollado con ❤️ usando Jakarta EE y tecnologías web modernas</p>
+        </div>
+    </div>
+</body>
+</html>
